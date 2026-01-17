@@ -1,0 +1,15 @@
+<!--U6ftvYGUp2SWdllpYq_Gx-->
+That exact string shows up again later inside the Next.js flight payload:
+
+js
+Copy code
+0:{"P":null,"b":"U6ftvYGUp2SWdllpYq_Gx", ...}
+So the “easter egg” is basically the Next.js build/deploy ID being mirrored as an HTML comment. 
+And the format is a dead giveaway: 21 characters, URL-safe that’s the default length/style of a NanoID.
+I assume whoever built it intentionally left the buildId as a comment so devs (or curious gremlins like you) can quickly confirm “which deployment am I looking at?” without digging through network calls.
+
+Bonus small “tell”s that it’s Next.js/App Router stuff:
+
+BAILOUT_TO_CLIENT_SIDE_RENDERING template (Next bailing to CSR for something)
+
+self.__next_f.push(...) flight stream chunks
